@@ -2,10 +2,7 @@
     <h2>产品分类</h2>
 </template>
 
-<script>
-export default {
-
-}
+<script lang="ts" setup>
 </script>
 
 <style>

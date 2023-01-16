@@ -29,6 +29,7 @@ import{ref,reactive, computed,Ref,watch} from 'vue'
 import User from '../class/User'
 import { FormInstance,FormRules} from 'element-plus'
 import {edit,add} from '../http'
+import { ElMessage } from 'element-plus'
 const ruleformRef = ref<FormInstance>()
 
 const props = defineProps({

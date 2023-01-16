@@ -48,13 +48,12 @@
 
 
 <script lang="ts" setup > 
-  
 import {ref,Ref,onMounted} from 'vue'
 import {Loading, Search} from '@element-plus/icons-vue'
 import User from '../class/User'
 import UserDto from '../class/UserDto'
 import addVue from '../components/UserAdd.vue'
-
+import { ElMessage } from 'element-plus'
 import {getList,del} from '../http'
   const multipleTableRef=ref()
   const tableData = ref<any[]>([])
@@ -141,10 +140,7 @@ import {getList,del} from '../http'
       tableData.value=data.data.data
     }
   }
-
-  
 </script>
-
 <style  lang="scss" scoped>
     .table{
       margin: 10px 0;

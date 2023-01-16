@@ -20,6 +20,7 @@ import {userLogin} from '../http/m2mhttp'
 import {FormRules} from 'element-plus'
 import {useRouter} from 'vue-router'
 import{useStore} from 'vuex'
+import { ElMessage } from 'element-plus'
 const router =  useRouter()
 const store =useStore()
 let loginForm=reactive({
