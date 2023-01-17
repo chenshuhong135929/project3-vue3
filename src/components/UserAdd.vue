@@ -29,7 +29,6 @@ import{ref,reactive, computed,Ref,watch} from 'vue'
 import User from '../class/User'
 import { FormInstance,FormRules} from 'element-plus'
 import {edit,add} from '../http'
-import { ElMessage } from 'element-plus'
 const ruleformRef = ref<FormInstance>()
 
 const props = defineProps({
@@ -77,6 +76,7 @@ const save=async(formEl:FormInstance | undefined)=>{
                      if(res.data.code='200'){
                          emits("success","修改成功")
                      }else{
+                             //@ts-ignore
                          ElMessage.error("操作失败")
                      }
                    }) 
@@ -85,6 +85,7 @@ const save=async(formEl:FormInstance | undefined)=>{
                      if(res.data.code='200'){
                          emits("success","添加成功")
                      }else{
+                             //@ts-ignore
                          ElMessage.error("操作失败")
                      }
                    })

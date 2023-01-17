@@ -17,10 +17,11 @@
 import { onMounted, reactive, ref } from 'vue';
  
 import {userLogin} from '../http/m2mhttp'
-import {FormRules} from 'element-plus'
+import { FormRules} from 'element-plus'
 import {useRouter} from 'vue-router'
 import{useStore} from 'vuex'
-import { ElMessage } from 'element-plus'
+ 
+
 const router =  useRouter()
 const store =useStore()
 let loginForm=reactive({
@@ -48,11 +49,10 @@ const rules = reactive<FormRules>( {
            store.commit('CHANGELOGIN',userToken)
            router.push('Index')
         }).catch(error => {
-             ElMessage({
-                showClose: true,
-                message: '账号或密码错误',
-                type: 'error',
-            })
+            //@ts-ignore
+             ElMessage.error(
+              '账号或密码错误'
+            )
           
           console.log(error);
         });
